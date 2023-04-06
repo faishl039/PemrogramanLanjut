@@ -1,0 +1,40 @@
+EXTRACT METHOD = pengeluaran isi dari method sebelumnya menjadi method baru yang akan muncul dibawahnya
+                yang mana method lama akan berubah menjadi lebih ringkas
+EXTRACT VARIABLE = membuat variable baru yang berisi ekspresi yang dipilih
+                   menghapus variable yang duplikat dan menambah fungsi kembalian
+INLINE TEMP = terdapat variable yang berisi ekspresi kemudian di inline kedalam method nya sendiri
+                supaya kode tdk panjang dan mudah terbaca
+
+
+
+TUGAS 1
+buat setget, ga manual, pake encapsulate fields di menu refactor
+
+TUGAS 2
+codingan awal spt di modul (codingan salah)
+di inline menjadi setget dan memasukkan parameter p, l, t (line 10, 17)
+extract method dilakukan pada rumus l dan v (line 11, 18) akan menjadi method baru dan method lama berubah mjd parameter
+mentah :     public int getLuas() {
+                 return luas;
+             }
+             public void setLuas(int panjang, int lebar, int tinggi) {
+                 luas = (2*panjang*lebar)+(2*lebar*tinggi)+(2*panjang*tinggi); //bagian ini diblok utk extract
+             }
+
+             public int getVolume() {
+                 return volume;
+             }
+             public void setVolume(int panjang, int lebar, int tinggi) {
+                 volume = panjang * lebar * tinggi;
+             }
+
+extracted :     private void luas(int panjang, int lebar, int tinggi) { ("luas" diblok utk inline)
+                    luas = (2* panjang * lebar)+(2* lebar * tinggi)+(2* panjang * tinggi);
+                }
+
+TUGAS 3
+codingan awal spt di modul (rouuuwet)
+di extract variable dg ctrl+alt+v / introduce variable
+
+TUGAS 4
+driver class dari clss balok
